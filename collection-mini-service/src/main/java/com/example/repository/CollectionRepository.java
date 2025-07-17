@@ -4,9 +4,14 @@ import com.example.model.Collection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+
 @Repository
 public interface CollectionRepository extends JpaRepository<Collection,Integer> {
 
     Collection findByCollectionId(Integer collectionId);
+
+    Collection findByPolicyId(Long policyId);
+
+    Collection findByOdenmeDurumu(Boolean odenmeDurumu);
 
 }

@@ -1,6 +1,7 @@
 package com.example.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +11,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "collection")
+@Schema(description = "collection bilgileri")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
