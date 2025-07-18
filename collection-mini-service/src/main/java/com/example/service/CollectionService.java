@@ -3,6 +3,7 @@ package com.example.service;
 import com.example.dto.DtoCollection;
 import com.example.dto.DtoCollectionFiyat;
 import com.example.dto.DtoCollectionUI;
+import org.aspectj.weaver.ast.Literal;
 
 import java.util.List;
 
@@ -25,5 +26,7 @@ public interface CollectionService {
     public List<DtoCollection> odenmeDurumuTrueByPolicyId(Long policyId);
 
     public DtoCollection durumGuncelle(Integer collectionId , DtoCollectionFiyat dtoCollectionFiyat);
+
+    public List<DtoCollection> getCollectionisValidAndFalse();
 
 }

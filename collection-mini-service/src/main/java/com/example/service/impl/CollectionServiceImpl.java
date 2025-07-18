@@ -204,4 +204,23 @@ public class CollectionServiceImpl implements CollectionService {
         return dtoCollection;
     }
 
+    public boolean isValidExpired(Date expired){
+        return new Date().before(expired);
+    }
+
+    @Override
+    public List<DtoCollection> getCollectionisValidAndFalse() {
+
+        List<Collection> collectionList = collectionRepository.findAll();
+        List<DtoCollection> dtoCollections = new ArrayList<>();
+
+        for (Collection collection : collectionList) {
+            if(!isValidExpired(collection.getCollectionDate()) && !collection.isOdenmeDurumu()) {
+                DtoCollection dtoCollection = new DtoCollection();
+                BeanUtils.copyProperties(collection, dtoCollection);
+                dtoCollections.add(dtoCollection);
+            }
+        }
+        return dtoCollections;
+    }
 }

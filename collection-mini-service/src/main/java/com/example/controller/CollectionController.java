@@ -26,4 +26,6 @@ public interface CollectionController {
 
     public DtoCollection durumGuncelle(Integer collectionId , DtoCollectionFiyat dtoCollectionFiyat);
 
+    public List<DtoCollection> getCollectionisValidAndFalse();
+
 }

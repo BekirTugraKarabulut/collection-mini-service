@@ -73,4 +73,10 @@ public class CollectionControllerImpl implements CollectionController {
         return collectionService.durumGuncelle(collectionId, dtoCollectionFiyat);
     }
 
+    @Override
+    @GetMapping(path = "/suresi-dolmus-ve-odenmemislerin-tumu")
+    public List<DtoCollection> getCollectionisValidAndFalse() {
+        return collectionService.getCollectionisValidAndFalse();
+    }
+
 }
